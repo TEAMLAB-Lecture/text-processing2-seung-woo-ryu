@@ -72,5 +72,5 @@ def to_camel_case(underscore_str):
     camel_list = list(map(lambda x: x.lower(), underscore_str.split("_")))
     first = camel_list[0]
     camel_list = list(map(lambda x: x.capitalize(), camel_list[1:]))
-    
+    camel_list.insert(0,first)
     return ''.join(camel_list)
