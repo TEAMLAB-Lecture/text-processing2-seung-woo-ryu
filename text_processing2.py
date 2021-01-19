@@ -70,7 +70,12 @@ def to_camel_case(underscore_str):
             "alreadyCamel"
     """
     camel_list = list(map(lambda x: x.lower(), underscore_str.split("_")))
-    first = camel_list[0]
+    temp = list()
+    for string in camel_list: 
+        if string:
+            temp.append(string)
+    camel_list, first = temp, temp[0]
+    
     camel_list = list(map(lambda x: x.capitalize(), camel_list[1:]))
     camel_list.insert(0,first)
     return ''.join(camel_list)
